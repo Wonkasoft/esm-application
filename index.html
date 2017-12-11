@@ -6,232 +6,77 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 <style type="text/css">
-html, body {
-	padding: 0;
-	margin: 0;
-	height: 100%;
-}
-body {
-	font-family: Roboto;
-	font-size: 18px;
-	background: #1dcffc;
-}
-* {
-	box-sizing: border-box;
-}
-a {
-	color: #1dceec;
-	font-family: Roboto Heavy;
-	text-decoration: none;
-	-webkit-transition: all .15s ease-in-out;
-	-moz-transition: all .15s ease-in-out;
-	-o-transition: all .15s ease-in-out;
-	transition: all .15s ease-in-out;
-}
-a:hover {
-	color: #019ec5;
-}
-.page-wrap {
-	position: relative;
-	min-height: 100%;
-	padding: 0;
-	margin: 0;
-}
-.container {
-	width: 100%;
-	margin: auto;
-	padding: 0 15px;
-}
-.row {
-	margin: auto -15px;
-}
-.header {
-	background: #1dcffc;
-	height: 125px;
-	border-bottom: 1px solid rgba(255,255,255,0.6);
-	-webkit-box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.8);
-	-moz-box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.8);
-	-o-box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.8);
-	box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.8);
-}
-.pg-title {
-	position: relative;
-	padding: 24px 0;
-	text-align: center;
-	color: #fff;
-	height: 100%;
-	width: 50%;
-	top: 50%;
-	left: 55%;
-	-webkit-transform: translate(-50%, -50%);
-	-moz-transform: translate(-50%, -50%);
-	-o-transform: translate(-50%, -50%);
-	transform: translate(-50%, -50%);
-	-webkit-text-shadow: 1px 1px 1px rgba(0,0,0,0.7);
-	-moz-text-shadow: 1px 1px 1px rgba(0,0,0,0.7);
-	-o-text-shadow: 1px 1px 1px rgba(0,0,0,0.7);
-	text-shadow: 1px 1px 1px rgba(0,0,0,0.7);
-}
-.title {
-	position: relative;
-	display: inline-block;
-	width: 60%;
-	float: left;
-	margin: auto;
-	top: 50%;
-	left: 35%;
-	-webkit-transform: translate(-50%, -50%);
-	-moz-transform: translate(-50%, -50%);
-	-o-transform: translate(-50%, -50%);
-	transform: translate(-50%, -50%);
-}
-.ws-logo {
-	position: relative;
-	display: inline-block;
-	float: left;
-	width: 20%;
-	max-height: 100%;
-	margin: auto;
-}
-.ws-img-responsive {
-	max-width: 50%;
-}
-.file-form {
-	padding: 15px 0;
-	text-align: center;
-}
-.form-group {
-	display: inline-block;
-	margin-right: 15px;
-	width: 395px;
-}
-.form-group:last-child {
-	margin-right: 0;
-}
-.input-wrap {
-	position: relative;
-	margin-top: 15px;
-	height: 160px;
-	padding: 8px;
-	background-color: #ddd;
-	border-radius: 4px;
-	outline: 2px dashed #92b0b3;
-	outline-offset: -10px;
-	-webkit-box-shadow: 1px 1px 4px 0px rgba(0,0,0,0.8);
-	-moz-box-shadow: 1px 1px 4px 0px rgba(0,0,0,0.8);
-	-o-box-shadow: 1px 1px 4px 0px rgba(0,0,0,0.8);
-	box-shadow: 1px 1px 4px 0px rgba(0,0,0,0.8);
-	-webkit-transition: all .15s ease-in-out;
-	-moz-transition: all .15s ease-in-out;
-	-o-transition: all .15s ease-in-out;
-	transition: all .15s ease-in-out;
-}
-.input-wrap.support-upload {
-	background-color: #eee;
-	outline: 2px dashed black;
-	outline-offset: -7px;
-}
-input.input {
-	padding: 8px;
-	font-size: 18px;
-	line-height: 1.5;
-}
-input.file-input {
-	position: relative;
-	display: block;
-	height: 100%;
-	padding: 95px 55px 8px;
-	width: 100%;
-	margin: auto;
-	font-size: 14px;
-}
-.btn-clear {
-	border-radius: 0 0 6px 6px;
-}
-.file-save {
-	text-align: center;
-}
-.new-file-input {
-	margin-right: -3px;
-	border: 1px solid #1dcffc;
-	border-right: none;
-	height: 50px;
-	vertical-align: top;
-}
-button.btn {
-	padding: 8px;
-	border: none;
-	min-width: 150px;
-	background: #1dcffc;
-	text-transform: uppercase;
-	color: #fff;
-	font-family: Roboto Heavy;
-	font-size: 18px;
-	height: 50px;
-	line-height: 1.5;
-	margin-left: -2px;
-	cursor: pointer;
-}
-.app-box {
-	background: #f9f9f9;
-	margin: 30px auto;
-	padding: 15px;
-	border-radius: 8px;
-	width: 850px;
-	-webkit-box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.8);
-	-moz-box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.8);
-	-o-box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.8);
-	box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.8);
-}
-i.fa.fa-upload {
-	position: absolute;
-	left: 50%;
-	top: 35%;
-	font-size: 60px;
-	padding: 16px;
-	float: left;
-	color: #fff;
-	text-shadow: 0px 1px 2px rgba(0,0,0,0.8);
-	-webkit-transform: translate(-50%, -50%);
-	-moz-transform: translate(-50%, -50%);
-	-o-transform: translate(-50%, -50%);
-	transform: translate(-50%, -50%);
-}
-#page-footer {
-	width: 100%;
-	margin: 0;
-	padding: 0;
-	position: absolute;
-	bottom: 0;
-	height: 100px;
-	color: #000;
-	font-weight: 300;
-	background: #f8f7fa;
-	padding: 0 15px;
-	text-align: center;
-}
-.copy-text {
-	position: relative;
-	margin: auto;
-	padding: 15px;
-	top: 50%;
-	left: 50%;
-	-webkit-transform: translate(-50%, -50%);
-	-moz-transform: translate(-50%, -50%);
-	-o-transform: translate(-50%, -50%);
-	transform: translate(-50%, -50%);
-}
+html, body { padding: 0; margin: 0; height: 100%; }
+
+body { font-family: Roboto; font-size: 18px; background: #1dcffc; }
+
+* { box-sizing: border-box; }
+
+a { color: #1dceec; font-family: Roboto Heavy; text-decoration: none; -webkit-transition: all .15s ease-in-out; -moz-transition: all .15s ease-in-out; -o-transition: all .15s ease-in-out; transition: all .15s ease-in-out; }
+
+a:hover { color: #019ec5; }
+
+.page-wrap { position: relative; min-height: 100%; padding: 0; margin: 0; }
+
+main#main-content { position: relative; padding-bottom: 100px; }
+
+.container { width: 100%; margin: auto; padding: 0 15px; }
+
+.row { margin: auto -15px; }
+
+.header { background: #1dcffc; text-align: center; border-bottom: 1px solid rgba(255, 255, 255, 0.6); -webkit-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.8); -moz-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.8); -o-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.8); box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.8); }
+
+.pg-title { position: relative; padding: 24px 0; text-align: center; color: #fff; height: 100%; width: 100%; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); -moz-transform: translate(-50%, -50%); -o-transform: translate(-50%, -50%); transform: translate(-50%, -50%); -webkit-text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7); -moz-text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7); -o-text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7); text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7); }
+
+.title { position: relative; display: inline-block; font-size: 20px; width: 100%; float: left; margin: auto; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); -moz-transform: translate(-50%, -50%); -o-transform: translate(-50%, -50%); transform: translate(-50%, -50%); }
+
+.ws-logo { position: relative; display: inline-block; float: none; padding: 15px; width: 35%; left: 0; max-height: 100%; margin: auto; }
+
+.ws-img-responsive { max-width: 100%; height: auto; max-height: 85px; display: block; margin: auto; }
+
+.file-form { padding: 15px 0; text-align: center; }
+
+.form-group { display: inline-block; margin-right: 0; width: 395px; max-width: 85%; }
+@media screen and (min-width: 769px) { .form-group { margin-right: 15px; } }
+
+.form-group:last-child { margin-right: 0; }
+
+.input-wrap { position: relative; margin-top: 15px; height: 160px; padding: 8px; background-color: #ccc; border-radius: 4px; outline: 2px dashed #92b0b3; outline-offset: -10px; -webkit-box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.8); -moz-box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.8); -o-box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.8); box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.8); -webkit-transition: all .15s ease-in-out; -moz-transition: all .15s ease-in-out; -o-transition: all .15s ease-in-out; transition: all .15s ease-in-out; }
+
+.input-wrap.support-upload { background-color: #eee; outline: 2px dashed black; outline-offset: -7px; }
+
+input.input { padding: 8px; font-size: 18px; line-height: 1.5; }
+
+input.file-input { position: relative; display: block; height: 100%; padding: 95px 55px 8px; width: 100%; margin: auto; font-size: 14px; }
+
+.btn-clear { border-radius: 0 0 6px 6px; }
+
+.file-save { text-align: center; }
+
+.new-file-input { margin-right: -3px; border: 1px solid #c5d5cb; height: 50px; vertical-align: top; }
+
+button.btn { padding: 8px; border: none; min-width: 150px; background: #1dcffc; text-transform: uppercase; color: #fff; font-family: Roboto Heavy; font-size: 18px; height: 50px; line-height: 1.5; margin-left: -2px; cursor: pointer; }
+
+.app-box { background: #f9f9f9; margin: 30px auto; padding: 15px; border-radius: 8px; width: 850px; max-width: 100%; -webkit-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.8); -moz-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.8); -o-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.8); box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.8); }
+
+i.fa.fa-upload { position: absolute; left: 50%; top: 35%; font-size: 60px; padding: 16px; float: left; color: #fff; text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.8); -webkit-transform: translate(-50%, -50%); -moz-transform: translate(-50%, -50%); -o-transform: translate(-50%, -50%); transform: translate(-50%, -50%); }
+
+#page-footer { width: 100%; margin: 0; padding: 0; position: absolute; bottom: 0; height: 100px; color: #000; font-weight: 300; background: #f9f9f9; padding: 0 15px; text-align: center; }
+
+.copy-text { position: relative; margin: auto; padding: 15px; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); -moz-transform: translate(-50%, -50%); -o-transform: translate(-50%, -50%); transform: translate(-50%, -50%); }
+
 </style>
 <link rel="icon" href="https://wonkasoft.com/wp-content/uploads/2017/08/wonka-logo-white@150px.png">
 </head>
 <body>
 	<div class="page-wrap">
+		<main id="main-content">
 		<div class="container">
 			<div class="row header">
-				<div class="pg-title">
 					<div class="ws-logo">
 						<img class="ws-img-responsive" src="https://wonkasoft.com/wp-content/uploads/2017/08/wonka-logo-white@150px.png" />
 					</div>
+				<div class="pg-title">
 					<h1 class="title">ESM - APPLICATION</h1>
 				</div>
 			</div>
@@ -275,6 +120,7 @@ i.fa.fa-upload {
 		</div>
 		</div>
 		</div>
+	</main>
 		<footer id="page-footer">
 			<div class="copy-text">
 			2017 &copy; All Rights Reservered. | Created by <a href="https://wonkasoft.com" target="_blank">Wonkasoft</a> 
