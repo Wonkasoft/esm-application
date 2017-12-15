@@ -4,7 +4,7 @@
 <head>
 	<title>ESM - APPLICATION</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 <style type="text/css">
 html, body { padding: 0; margin: 0; height: 100%; }
 
@@ -88,7 +88,7 @@ i.fa.fa-upload { position: absolute; left: 50%; top: 35%; font-size: 60px; paddi
 						<small>Incomplete data</small>
 						<div class="input-wrap input-wrap-1">
 							<i class="fa fa-upload" aria-hidden="true"></i>
-							<input class="input file-input input-1" name="file1" type="file" id="completed" onchange="loadFile1AsText()" />
+							<input class="input file-input input-1" name="file1" type="file" id="completed" onchange=" ValidateSingleInput(this); loadFile1AsText()" />
 						</div>
 						<div class="clear-btn">
 							<button type="button" class="btn btn-clear" onclick="clearFile( 1 )">Clear File</button>
@@ -99,7 +99,7 @@ i.fa.fa-upload { position: absolute; left: 50%; top: 35%; font-size: 60px; paddi
 						<small>Completed data</small>
 						<div class="input-wrap input-wrap-2">
 							<i class="fa fa-upload" aria-hidden="true"></i>
-							<input class="input file-input input-2" name="file2" type="file" id="incompleted" onchange="loadFile2AsText()" />
+							<input class="input file-input input-2" name="file2" type="file" id="incompleted" onchange="ValidateSingleInput(this); loadFile2AsText()" />
 						</div>
 						<div class="clear-btn">
 							<button type="button" class="btn btn-clear" onclick="clearFile( 2 )">Clear File</button>
@@ -190,6 +190,11 @@ function saveAsCSV(str, filename) {
 
 
 function completedFile() {
+	let filename = document.getElementById("filename").value
+	if(filename == "") {
+		alert("Please enter a new filename");
+		return false;
+	}
 	if(file1Text && file2Text) {
 		let replacement = file1Text.replace(/...-...-..../g, function(redacted) {
 			let number = file2Text.split("\n").filter(line => {
@@ -219,6 +224,7 @@ function completedFile() {
 	}
 }
 
+
 // For Selected File to be cleared
 function clearFile( num ) {
 	var clear_input = document.querySelector( '.input-' + num );
@@ -226,6 +232,32 @@ function clearFile( num ) {
 	clear_input.setAttribute( "type", 'file' );
 	clear_input.parentNode.classList.remove( 'support-upload' );
 }
+
+
+//Validate .CSV extention
+var _validFileExtensions = [".csv"]; 
+function ValidateSingleInput(oInput) {
+    if (oInput.type == "file") {
+        var sFileName = oInput.value;
+         if (sFileName.length > 0) {
+            var blnValid = false;
+            for (var j = 0; j < _validFileExtensions.length; j++) {
+                var sCurExtension = _validFileExtensions[j];
+                if (sFileName.substr(sFileName.length - sCurExtension.length, sCurExtension.length).toLowerCase() == sCurExtension.toLowerCase()) {
+                    blnValid = true;
+                    break;
+                }
+            }
+             
+            if (!blnValid) {
+                alert("Sorry, that file extention is invalid, allowed extensions are: " + _validFileExtensions.join(", "));
+                oInput.value = "";
+                return false;
+            }
+        }
+    }
+    return true;
+	}
 
 </script>
 </body>
